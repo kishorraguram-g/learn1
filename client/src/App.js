@@ -7,7 +7,7 @@ function App() {
   const handleSubmit = async () => {
     console.log('hi');
     try {
-       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/process`, {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/process`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ paragraph: text }),
