@@ -6,12 +6,16 @@ const cors=require("cors");
 app.use(express.json());
 app.use(
   cors({
-      origin: "https://learn1-cllient-2317w3up2-kishor-ragurams-projects.vercel.app",
+      origin: [
+          "https://learn1-cllient.vercel.app",  // Main frontend URL
+          "https://learn1-cllient-2317w3up2-kishor-ragurams-projects.vercel.app",  // Old URL (if needed)
+      ],
       methods: ["GET", "POST", "OPTIONS"],
       allowedHeaders: ["Content-Type", "Authorization"],
       credentials: true,
   })
 );
+
 
 app.post("/api/process", (req, res) => {
     const { paragraph } = req.body;
